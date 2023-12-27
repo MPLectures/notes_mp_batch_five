@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:notes_mp_batch_five/controller/controller.dart';
+import 'package:notes_mp_batch_five/controller/notes_controller.dart';
 import 'package:notes_mp_batch_five/helpers/constants.dart';
 import 'package:notes_mp_batch_five/views/layouts/layout_navigation.dart';
 import 'package:notes_mp_batch_five/views/screens/screen_register.dart';
@@ -22,7 +22,7 @@ class ScreenLogin extends StatelessWidget {
     double screenWidth = Get.width;
 
 
-    TestController controller = Get.put(TestController());
+    NotesController controller = Get.put(NotesController());
     print("Login Screen has rebuild");
     return Scaffold(
       resizeToAvoidBottomInset: false,

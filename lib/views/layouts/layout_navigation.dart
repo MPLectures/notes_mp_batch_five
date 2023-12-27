@@ -1,7 +1,7 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:notes_mp_batch_five/controller/controller.dart';
+import 'package:notes_mp_batch_five/controller/notes_controller.dart';
 import 'package:notes_mp_batch_five/helpers/constants.dart';
 import 'package:notes_mp_batch_five/views/layouts/layout_home.dart';
 import 'package:notes_mp_batch_five/views/layouts/layout_profile.dart';
@@ -16,7 +16,7 @@ class LayoutNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TestController controller = Get.put(TestController());
+    NotesController controller = Get.put(NotesController());
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),

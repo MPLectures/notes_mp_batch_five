@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class TestController extends GetxController {
+class NotesController extends GetxController {
   Rx<int> count = 0.obs;
   Rx<int> selectedIndex = 0.obs;
   Rx<bool> switchValue = false.obs;
