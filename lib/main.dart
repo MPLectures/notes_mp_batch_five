@@ -11,15 +11,11 @@ class NotesApp extends StatelessWidget {
   const NotesApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Sizer(
-      builder: (context, orientation, deviceType) {
-        return GetMaterialApp(
+  Widget build(BuildContext context) => Sizer(
+      builder: (context, orientation, deviceType) => GetMaterialApp(
           debugShowCheckedModeBanner: false,
           home: ScreenOnBoarding(),
           // home: ObservableVariableScreen(),
-        );
-      },
+        ),
     );
-  }
 }
