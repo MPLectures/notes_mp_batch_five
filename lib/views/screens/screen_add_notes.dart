@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:notes_mp_batch_five/controller/notes_controller.dart';
 import 'package:notes_mp_batch_five/helpers/constants.dart';
 import 'package:notes_mp_batch_five/widgets/buttons.dart';
 import 'package:notes_mp_batch_five/widgets/text_field.dart';
@@ -11,6 +12,7 @@ class ScreenAddNotes extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    NotesController controller = Get.put(NotesController());
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
@@ -74,7 +76,15 @@ class ScreenAddNotes extends StatelessWidget {
               text: "Save",
               isDoubleIcon: false,
               borderRadius: 10,
-              onButtonTap: () {},
+              onButtonTap: () {
+                Map<String, String> newNote = {
+                  'title': _titleController.text,
+                  'data': _dataController.text,
+                };
+
+                controller.addNote(newNote);
+                Get.back();
+              },
             ).paddingOnly(bottom: 30.sp),
           ],
         ).paddingSymmetric(horizontal: 20.sp),

@@ -7,8 +7,13 @@ class NotesController extends GetxController {
   Rx<bool> switchValue = false.obs;
   Rx<bool> hiddenPassword = false.obs;
   IconData icon = Icons.visibility_outlined;
+  RxList<Map<String, String>> notesList = <Map<String, String>>[].obs;
+
 
   void togglePassword() {
     hiddenPassword.value = !hiddenPassword.value;
+  }
+  void addNote(Map<String, String> note) {
+    notesList.add(note);
   }
 }
