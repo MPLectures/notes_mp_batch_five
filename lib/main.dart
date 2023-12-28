@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:notes_mp_batch_five/views/screens/screen_on_boarding.dart';
 import 'package:sizer/sizer.dart';
 
+import 'practice/pageView.dart';
+
 void main() {
   runApp(NotesApp());
 }
@@ -15,6 +17,7 @@ class NotesApp extends StatelessWidget {
       builder: (context, orientation, deviceType) => GetMaterialApp(
           debugShowCheckedModeBanner: false,
           home: ScreenOnBoarding(),
+        // home: ScreenPageView(),
           // home: ObservableVariableScreen(),
         ),
     );
