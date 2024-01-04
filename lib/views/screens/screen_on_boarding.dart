@@ -33,6 +33,9 @@ class ScreenOnBoarding extends StatelessWidget {
       backgroundColor: NotesColor.appColor,
       body: PageView.builder(
         onPageChanged: controller.onPageChanged,
+        // onPageChanged: (index){
+        //   int a = index;
+        // },
         controller: controller.pageController,
         itemCount: controller.images.length,
         itemBuilder: (context, index) => Column(

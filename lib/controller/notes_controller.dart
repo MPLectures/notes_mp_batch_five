@@ -7,6 +7,8 @@ class NotesController extends GetxController {
   Rx<bool> switchValue = false.obs;
   Rx<bool> hiddenPassword = false.obs;
   IconData icon = Icons.visibility_outlined;
+  RxInt pageIndex = 0.obs;
+
   RxList<Map<String, String>> notesList = <Map<String, String>>[].obs;
   List<String> images = [
     "assets/images/illustration_three.svg",
@@ -17,9 +19,9 @@ class NotesController extends GetxController {
   List<String> heading = [
     "You can search whatever you saved in this app just by single click ",
     "All your notes are well organized and can be seen anytime you want to check",
-    "Share your expereince with your friends and save your important notes",
+    "Share your experience with your friends and save your important notes",
   ];
-  RxInt pageIndex = 0.obs;
+
   final pageController = PageController(initialPage: 0);
 
   void onPageChanged (int index){

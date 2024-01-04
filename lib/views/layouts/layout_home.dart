@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:notes_mp_batch_five/controller/notes_controller.dart';
 import 'package:notes_mp_batch_five/helpers/constants.dart';
+import 'package:notes_mp_batch_five/views/layouts/item_drawer.dart';
 import 'package:notes_mp_batch_five/views/layouts/item_list.dart';
 import 'package:sizer/sizer.dart';
 
@@ -11,14 +12,24 @@ class LayoutHome extends StatelessWidget {
     NotesController controller = Get.put(NotesController());
     return Obx(() {
       return Scaffold(
+        drawer: ItemDrawer(),
         appBar: AppBar(
-          automaticallyImplyLeading: false,
+          // automaticallyImplyLeading: false,
+          // leading: Builder(builder: (context) {
+          //   return GestureDetector(
+          //     onTap: () {
+          //       Scaffold.of(context).openEndDrawer();
+          //     },
+          //     child: Icon(Icons.menu),
+          //   );
+          // }),
           title: Text("Home"),
           centerTitle: true,
           actions: [
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 controller.notesList.clear();
+                Scaffold.of(context).openEndDrawer();
               },
               child: Icon(Icons.delete).paddingOnly(right: 10.sp),
             )
@@ -70,3 +81,4 @@ class LayoutHome extends StatelessWidget {
     });
   }
 }
+
